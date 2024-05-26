@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/menuStyle.css">
+  </head>
+  <body>
+    <div id="menu">
+      <h1>Blackjack!</h1>
+      <button type="button" id="start">Gioca</button>
+      <button type="button" id="showRules">Regole</button>
+    </div>
+
+    <div id="rules">
+      <h2>Regole del Blackjack</h2>
+      <p>
+        Il Blackjack è un gioco di carte tra giocatori e il banco. L'obiettivo è
+        avvicinarsi il più possibile a 21 senza superarlo.
+      </p>
+      <ul>
+        <li>Le carte numeriche (2-10) valgono il loro numero.</li>
+        <li>Le figure (Re, Regina, Fante) valgono 10.</li>
+        <li>
+          L'Asso vale 1 o 11, a seconda di quale valore è più vantaggioso.
+        </li>
+      </ul>
+      <p>Inizio del Gioco:</p>
+      <ul>
+        <li>Ogni giocatore riceve due carte scoperte.</li>
+        <li>Il banco riceve una carta scoperta e una coperta.</li>
+      </ul>
+      <p>Turno del Giocatore:</p>
+      <ul>
+        <li>Puoi scegliere di chiedere carte (Hit) per ricevere un'altra carta.</li>
+        <li>Puoi "Stare"(Stay) per mantenere il tuo punteggio attuale.</li>
+        <li>Se superi 21 punti, perdi automaticamente ("sballi").</li>
+      </ul>
+      <p>Turno del Banco:</p>
+      <ul>
+        <li>Il banco scopre la carta coperta.</li>
+        <li>
+          Il banco deve chiedere carte fino a raggiungere almeno 17 punti.
+        </li>
+        <li>Se il banco supera 21 punti, perde automaticamente ("sballa").</li>
+      </ul>
+      <p>Vincita:</p>
+      <ul>
+        <li>
+          Se il tuo punteggio è più vicino a 21 del punteggio del banco, vinci.
+        </li>
+        <li>
+          Se hai 21 con le prime due carte (un Asso e una carta da 10 punti),
+          hai un "Blackjack" e vinci automaticamente, a meno che il banco non abbia a sua volta "Blackjack".
+        </li>
+        <li>
+          Se pareggi con il banco, la mano è un "pareggio" e la puntata viene
+          restituita.
+        </li>
+      </ul>
+      <button type="button" id = "hideRules">Torna al menu</button>
+    </div>
+
+    <script src="js/menu.js"></script>
+  </body>
+</html>

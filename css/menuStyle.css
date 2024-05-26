@@ -1,0 +1,80 @@
+
+button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #075e54;
+}
+
+#menu {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 48px;
+  font-family: "Arial Black", sans-serif;
+  letter-spacing: -1.6px;
+  color: #000000;
+  font-variant: small-caps;
+  margin-bottom: 30px;
+}
+
+#rules {
+  text-align: left;
+  background-color: #72c8bd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+  border: 6px solid #000000
+}
+
+#rules h2 {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+#rules p {
+  font-size: 21px;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+#rules ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#rules ul li {
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.5;
+}
