@@ -2,8 +2,6 @@
 
 function Deck() {
     this.cards = [];
-    this.buildDeck();
-    this.shuffleDeck();
 }
 
 Deck.prototype.buildDeck = function() {
@@ -54,7 +52,6 @@ Card.prototype.toString = function() {
 // Player
 
 function Player() {
-    
     this.cards = [];
     this.sum = 0;
     this.aceCount = 0;
@@ -140,12 +137,10 @@ window.onload = function() {
 function newGame() {
     if (gameCount == 5 || !deck) {
         deck = new Deck();
+        deck.buildDeck();
+        deck.shuffleDeck();
         gameCount = 0;
     }
-    // if (!deck || deck.cards.length < 10) {
-    //     deck = new Deck();
-    // }
-    
 
     startGame();
     gameCount++;
@@ -185,7 +180,9 @@ function startGame() {
 }
 
 function playerHit() {
-    if (!canHit) return;
+    if (!canHit){ 
+        return;
+    }
     let card = player.hit(deck);
     if (card) {
         addCardImage(card, player);
