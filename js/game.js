@@ -78,9 +78,6 @@ Player.prototype.reset = function() {
 }
 
 Player.prototype.hit = function(deck) {
-    if (this.sum >= 21) {
-        return;
-    }
     let card = deck.drawCard();
     this.addCard(card);
     return card;
@@ -99,14 +96,7 @@ Dealer.prototype.constructor = Dealer;
 Dealer.prototype.setHiddenCard = function(card) {
     this.hiddenCard = card;
     this.addCard(card);
-    this.sum -= card.getValue();
-}
-
-Dealer.prototype.revealHiddenCard = function() {
-    if (this.hiddenCard) {
-        this.sum += this.hiddenCard.getValue();
-        this.hiddenCard = null;
-    }
+    document.getElementById("dealerCards").innerHTML = '<img id="hiddenCard" src="../assets/images/backs/BACK.png"><img id="dealerCard1">';
 }
 
 // Inizio codice di gioco
@@ -154,7 +144,6 @@ function startGame() {
     blackjack = false;
 
     yourCards.innerHTML = "";
-    document.getElementById("dealerCards").innerHTML = '<img id="hiddenCard" src="../assets/images/backs/BACK.png"><img id="dealerCard1">';
     results.innerText = "";
     yourScore.innerText = "";
     dealerScore.innerText = "";
@@ -195,9 +184,9 @@ function playerHit() {
 
 function stay() {
     canHit = false;
-    dealer.revealHiddenCard();
     document.getElementById("hiddenCard").src = `../assets/images/cards/${dealer.cards[0].toString()}.png`;
     dealerScore.innerText = dealer.sum;
+    //setTimeout()
 
     if (blackjack) {
         results.innerText = dealer.sum === 21 ? "Draw!" : "BLACKJACK!";
@@ -211,7 +200,9 @@ function stay() {
     }
     while (dealer.sum < 17) {
         let card = dealer.hit(deck);
-        if (card) addCardImage(card, dealer);
+        if (card){
+            addCardImage(card, dealer);
+        }
     }
 
     if (dealer.sum > 21 || player.sum > dealer.sum) {
